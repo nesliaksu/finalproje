@@ -1,0 +1,47 @@
+---
+title: "R proje büt"
+format: pdf
+editor: visual
+---
+
+```{r}
+library(readxl)
+rayl_sistemler_hat_bazl_sefer_saylar <- read_excel("C:/Users/NESLİHAN/Downloads/rayl-sistemler-hat-bazl-sefer-saylar.xlsx")
+View(rayl_sistemler_hat_bazl_sefer_saylar)
+```
+
+```{r}
+library(Amelia)
+missmap(rayl_sistemler_hat_bazl_sefer_saylar)
+```
+
+```{r}
+library(VIM)
+matrixplot(rayl_sistemler_hat_bazl_sefer_saylar)
+```
+
+```{r}
+library(naniar)
+vis_miss(rayl_sistemler_hat_bazl_sefer_saylar)
+```
+
+```{r}
+library(VIM)
+marginplot(rayl_sistemler_hat_bazl_sefer_saylar[,c("Tarih","M2")])
+```
+
+```{r}
+barMiss(rayl_sistemler_hat_bazl_sefer_saylar[,c("TF1")])
+```
+
+```{r}
+barMiss(rayl_sistemler_hat_bazl_sefer_saylar[,c("TF1","TF2")])
+```
+
+```{r}
+scattJitt(rayl_sistemler_hat_bazl_sefer_saylar[,15:16])
+```
+
+```{r}
+parcoordMiss(rayl_sistemler_hat_bazl_sefer_saylar)
+```
